@@ -1,0 +1,84 @@
+<?php //%255BApp%255CEntity%255CReferentiels%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\ReferentielsRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get_referentiels_grpecompetences' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'referentiels' => 'read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/referentiels',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                    'get_grpecompetences_competences' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpe_and_competences:read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/referentiels/grpecompetences',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                    'create_referentiels' => [
+                        'denormalization_context' => [
+                            'groups' => [
+                                'grpe_and_competences:write',
+                            ],
+                        ],
+                        'method' => 'POST',
+                        'path' => '/admin/referentiels',
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_grpecompetences_referentiels' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'referentiels' => 'read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/referentiels/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_APPRENANT\'))',
+                    ],
+                    'edit_grpecompetences_referentiels' => [
+                        'denormalization_context' => [
+                            'groups' => [
+                                'referentiels' => 'write',
+                            ],
+                        ],
+                        'method' => 'PUT',
+                        'path' => '/admin/referentiels/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_APPRENANT\'))',
+                    ],
+                    'competences_groupe_competences_ref' => [
+                        'method' => 'GET',
+                        'route_name' => 'get_comp_gc_ref',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_APPRENANT\'))',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

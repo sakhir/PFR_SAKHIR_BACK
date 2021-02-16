@@ -1,0 +1,93 @@
+<?php //%255BApp%255CEntity%255CGroupeTags%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\GroupeTagsRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get_grpe_tags' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpeTags:read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/grptags',
+                    ],
+                    'create_grpe_tags' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpeTags:read',
+                            ],
+                        ],
+                        'denormalization_context' => [
+                            'groups' => [
+                                'grpeTags:write',
+                            ],
+                        ],
+                        'method' => 'POST',
+                        'path' => '/admin/grptags',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_one_grpe_tags' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpeTags:read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/grptags/{id}/tags',
+                    ],
+                    'get_one_grpe' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpeTagsrek',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/grptags/{id}',
+                    ],
+                    'edit_tags' => [
+                        'method' => 'PUT',
+                        'path' => '/admin/grptags/{id}',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'grpTag:write',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'subresourceOperations' => [
+                1 => [
+                    'tags_get_subresource' => [
+                        'method' => 'GET',
+                        'path' => '/admin/grptags/{id}/tags',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\'))',
+                    'security_message' => 'vous n\'avez pas accès a cette resource',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

@@ -1,0 +1,30 @@
+<?php //subresource_operations_67b1f59f87f0e9a3cf20006929382a26
+
+return [PHP_INT_MAX, [
+    'api_groupes_apprenants_get_subresource' => [
+        'property' => 'apprenants',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Apprenant',
+        'shortNames' => [
+            'Apprenant',
+            'Groupes',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Groupes',
+                true,
+            ],
+        ],
+        'operation_name' => 'apprenants_get_subresource',
+        'route_name' => 'api_groupes_apprenants_get_subresource',
+        'path' => '/groupes/{id}/apprenants.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

@@ -1,0 +1,68 @@
+<?php //App_Entity_Competence
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Competence',
+                'id',
+                'libelle',
+                'description',
+                'competences',
+                'niveaux',
+                'archivage',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'libelle' => $o[2],
+                    'description' => $o[3],
+                    'competences' => $o[4],
+                    'niveaux' => $o[5],
+                    'archivage' => $o[6],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'comp',
+                    'grpecompetence:read',
+                    'all_grp_c',
+                    'competence_grp',
+                    'ref:read',
+                    'write',
+                ],
+                [
+                    'comp',
+                    'grpecompetence:read',
+                    'all_grp_c',
+                    'competence_grp',
+                    'ref:read',
+                ],
+                [
+                    'comp',
+                    'all_grp_c',
+                    'competence_grp',
+                    'ref:read',
+                ],
+                [
+                    'comp',
+                ],
+                [
+                    'comp',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

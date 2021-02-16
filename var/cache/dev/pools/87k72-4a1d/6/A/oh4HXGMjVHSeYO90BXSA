@@ -1,0 +1,73 @@
+<?php //%255BApp%255CEntity%255CCompetence%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\CompetenceRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get_competences_and_niveaux' => [
+                        'method' => 'GET',
+                        'path' => '/admin/competences',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                        'normalization_context' => [
+                            'groups' => [
+                                'comp',
+                            ],
+                        ],
+                    ],
+                    'create_competences_and_niveaux' => [
+                        'path' => '/admin/competences',
+                        'method' => 'POST',
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_levels_competences' => [
+                        'method' => 'GET',
+                        'path' => '/admin/competences/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                        'normalization_context' => [
+                            'groups' => [
+                                'comp',
+                            ],
+                        ],
+                    ],
+                    'edit_levels' => [
+                        'method' => 'PUT',
+                        'path' => '/admin/competences/{id}',
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                        'normalization_context' => [
+                            'groups' => [
+                                'comp',
+                            ],
+                        ],
+                    ],
+                    'archivage_competence' => [
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                        'normalization_context' => [
+                            'groups' => [
+                                'comp',
+                            ],
+                        ],
+                        'route_name' => 'archivage_competence',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

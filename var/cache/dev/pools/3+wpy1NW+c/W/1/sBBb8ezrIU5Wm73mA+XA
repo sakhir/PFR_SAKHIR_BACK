@@ -1,0 +1,30 @@
+<?php //subresource_operations_02d13c06a0490cb2aafaf48ae29ac047
+
+return [PHP_INT_MAX, [
+    'api_groupe_competences_competences_get_subresource' => [
+        'property' => 'competences',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Competence',
+        'shortNames' => [
+            'Competence',
+            'GroupeCompetences',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\GroupeCompetences',
+                true,
+            ],
+        ],
+        'operation_name' => 'competences_get_subresource',
+        'route_name' => 'api_groupe_competences_competences_get_subresource',
+        'path' => '/groupe_competences/{id}/competences.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

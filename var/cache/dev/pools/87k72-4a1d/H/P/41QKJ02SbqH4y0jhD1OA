@@ -1,0 +1,73 @@
+<?php //%255BApp%255CEntity%255CGroupes%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'collectionOperations' => [
+                [
+                    'get_admin_groupes' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grp:read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/groupes',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\'))',
+                    ],
+                    'get_admin_groupes_apprenants' => [
+                        'method' => 'GET',
+                        'normalization_context' => [
+                            'groups' => [
+                                'apprenants:read',
+                            ],
+                        ],
+                        'path' => '/admin/groupes/apprenants',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') )',
+                    ],
+                    'Create_groupes_apprennant_formateur' => [
+                        'denormalization_context' => [
+                            'groups' => [
+                                'grp:write',
+                            ],
+                        ],
+                        'method' => 'POST',
+                        'path' => '/admin/groupes',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') )',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                [
+                    'get_admin_groupes_id' => [
+                        'method' => 'GET',
+                        'path' => '/admin/groupes/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') )',
+                    ],
+                    'Ajouter_apprenant_groupe' => [
+                        'method' => 'PUT',
+                        'path' => '/admin/groupes/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') )',
+                    ],
+                    'delete_app_grp' => [
+                        'route_name' => 'delete_app_grp',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') )',
+                    ],
+                ],
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\GroupesRepository',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

@@ -1,0 +1,129 @@
+authentication_token:
+    path: /api/login_check
+    methods: ['POST']
+#creation users
+create_user:
+   path: /api/admin/users
+   controller: App\Controller\UserController::addUser
+   methods: ['POST']
+
+#edit users
+edit_user:
+   path: /api/admin/users/{id}
+   controller: App\Controller\UserController::EditUser
+   methods: ['POST']
+
+get_users_deleted:
+   path: /api/admin/users-deleted
+   controller: App\Controller\UserController:UsersDeleted
+   methods: ['GET']
+
+All_users_actif:
+   path: /api/admin/users
+   controller: App\Controller\UserController:UsersActif
+   methods: ['GET']
+
+
+#liste des apprenants par le formateur et le CM
+list_apprenant:
+   path: /api/apprenants
+   controller: App\Controller\UserController::showApprenants
+   methods: ['GET']
+#liste des formateurs par le CM
+list_formateur_cm:
+   path: /api/formateurs
+   controller: App\Controller\UserController::showFormateurs
+   methods: ['GET']
+#Get one  apprenant 
+show_apprenant:
+   path: /api/apprenant/{id}
+   controller: App\Controller\UserController::findApprenantsById
+   methods: ['GET']
+#Get one formateur 
+show_formateur:
+   path: /api/formateur/{id}
+   controller: App\Controller\UserController::findFormateursById
+   methods: ['GET']
+#editer un apprenant
+edit_apprenant:
+   path: /api/apprenants/{id}
+   controller: App\Controller\UserController::editApprenant
+   methods: ['PUT']
+
+#edit d'un Formateur by id
+edit_formateur:
+  path: /api/formateur/{id}
+  controller: App\Controller\UserController::editFormateur
+  methods: ['PUT']
+#delete user
+delete_user:
+   path: /api/admin/users/{id}
+   controller: App\Controller\UserController::deleteUser
+   methods: ['DELETE']
+
+#delete profil
+delete_profil:
+   path: /api/admin/profils/{id}
+   controller: App\Controller\UserController::deleteProfil
+   methods: ['DELETE']
+
+#delete profil
+delete_profil_sortie:
+   path: /api/admin/profilsorti/{id}
+   controller: App\Controller\UserController::deleteProfilSorti
+   methods: ['DELETE']
+
+   #Réintegrer user
+reintegrer_user:
+   path: /api/admin/users-integre/{id}
+   controller: App\Controller\UserController::IntegrerUser
+   methods: ['DELETE']
+#delete Apprennnt dans un groupe 
+delete_app_grp:
+   path: /api/admin/groupes/{idg}/apprenants/{id}
+   controller: App\Controller\UserController::deleteAppGrpe
+   methods: ['DELETE']
+#archivage_competence
+archivage_competence:
+   path: /api/admin/competences/{id}
+   controller: App\Controller\GroupeCompetenceController::deleteComp
+   methods: ['DELETE']
+
+   #creation groupe competence
+create_groupe_competence:
+   path: /api/admin/grpecompetences
+   controller: App\Controller\GroupeCompetenceController::createGroupeCompetence
+   methods: ['POST']
+   #Editer  groupe competence
+edit_grpe_competences:
+   path: /api/admin/grpecompetences/{id}
+   controller: App\Controller\GroupeCompetenceController::EditGroupeCompetence
+   methods: ['PUT']
+#competencess d'un groupe de competences d'un referentiel
+get_comp_gc_ref:
+   path:  /api/admin/referentiels/{id}/grpecompetences/{idgc}
+   controller: App\Controller\ReferentielController::getCompetences_gc_referentiels
+   methods: ['GET']
+
+#Referentiel , formateur et apprenants du groupe principal
+get_promo_principal:
+   path:  /api/admin/promo/principal
+   controller: App\Controller\PromoController::getInfoPrincipal
+   methods: ['GET']
+
+#Afficher les Apprenants  d'une Promo par profil de Sortie
+apprenants_promo_profils_sortie:
+   path:  /api/admin/promo/{id}/profilsorties(promo)
+   controller: App\Controller\ProfilSortieController::getApprenantPromoProfilSortie
+   methods: ['GET']
+#Afficher les Apprenants d'un Profil de Sortie d'une Promo
+apprenant_promo_ps:
+   path:  /api/admin/promo/{idpromo}/profilsortie/{id}(Promo)
+   controller: App\Controller\ProfilSortieController::getApprenantDunProfilDunePromo
+   methods: ['GET']
+
+#edit promodo and referentiel
+edit_promo_ref:
+   path:  /api/admin/promo/{id}
+   controller: App\Controller\PromoController::editPromo
+   methods: ['PUT']

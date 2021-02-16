@@ -1,0 +1,61 @@
+<?php //subresource_operations_d933c9b083aeeae63335c6e23124602e
+
+return [PHP_INT_MAX, [
+    'api_referentiels_groupe_competences_get_subresource' => [
+        'property' => 'groupeCompetences',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\GroupeCompetences',
+        'shortNames' => [
+            'GroupeCompetences',
+            'Referentiels',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Referentiels',
+                true,
+            ],
+        ],
+        'operation_name' => 'groupe_competences_get_subresource',
+        'route_name' => 'api_referentiels_groupe_competences_get_subresource',
+        'path' => '/referentiels/{id}/groupe_competences.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+    'api_referentiels_groupe_competences_competences_get_subresource' => [
+        'property' => 'competences',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Competence',
+        'shortNames' => [
+            'Competence',
+            'GroupeCompetences',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Referentiels',
+                true,
+            ],
+            [
+                'groupeCompetences',
+                'App\\Entity\\GroupeCompetences',
+                true,
+            ],
+        ],
+        'operation_name' => 'groupe_competences_competences_get_subresource',
+        'route_name' => 'api_referentiels_groupe_competences_competences_get_subresource',
+        'path' => '/referentiels/{id}/groupe_competences/{groupeCompetences}/competences.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

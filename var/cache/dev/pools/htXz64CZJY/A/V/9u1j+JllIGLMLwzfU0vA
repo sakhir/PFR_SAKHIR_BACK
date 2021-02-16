@@ -1,0 +1,3 @@
+<?php //route_name_2873abb742332b15a8c9ab71c5ffce9f
+
+return [PHP_INT_MAX, 'api_profil_sorties_get_one_profils_sortie_item'];

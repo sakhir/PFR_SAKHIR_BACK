@@ -1,0 +1,102 @@
+<?php //%255BApp%255CEntity%255CUser%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['Doctrine\\ORM\\Mapping\\InheritanceType'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\InheritanceType')),
+        clone ($p['Doctrine\\ORM\\Mapping\\DiscriminatorColumn'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\DiscriminatorColumn')),
+        clone ($p['Doctrine\\ORM\\Mapping\\DiscriminatorMap'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\DiscriminatorMap')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\UserRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get_users' => [
+                        'method' => 'GET',
+                        'path' => '/admin/users',
+                        'normalization_context' => [
+                            'groups' => [
+                                'user:read',
+                            ],
+                        ],
+                    ],
+                    'create_users' => [
+                        'method' => 'POST',
+                        'path' => '/admin/users',
+                        'route_name' => 'create_user',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_one_user' => [
+                        'method' => 'GET',
+                        'path' => '/admin/users/{id}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'user:read',
+                            ],
+                        ],
+                    ],
+                    'edit_user' => [
+                        'method' => 'POST',
+                        'path' => '/admin/users/{id}',
+                        'route_name' => 'edit_user',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'pagination_enabled' => true,
+                    'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    'security_message' => 'vous n\'avez pas accès a cette resource',
+                ],
+            ],
+            'value' => [
+                2 => 'SINGLE_TABLE',
+                4 => [
+                    'formateur' => 'Formateur',
+                    'CM' => 'CM',
+                    'apprenant' => 'Apprenant',
+                    'test' => 'Test',
+                    'admin' => 'User',
+                ],
+            ],
+            'name' => [
+                3 => 'type',
+            ],
+            'type' => [
+                3 => 'string',
+            ],
+            'filterClass' => [
+                5 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\SearchFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\OrderFilter',
+            ],
+            'properties' => [
+                5 => [
+                    'isdeleted' => 'exact',
+                ],
+                [
+                    'prenom',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+        $o[4],
+        $o[5],
+        $o[6],
+    ],
+    []
+); }];

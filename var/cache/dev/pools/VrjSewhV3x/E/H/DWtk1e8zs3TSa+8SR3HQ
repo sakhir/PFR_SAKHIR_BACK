@@ -1,0 +1,83 @@
+<?php //App_Entity_Groupes
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Groupes',
+                'id',
+                'nom',
+                'dateCreation',
+                'statut',
+                'type',
+                'apprenants',
+                'formateurs',
+                'promos',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'nom' => $o[2],
+                    'dateCreation' => $o[3],
+                    'statut' => $o[4],
+                    'type' => $o[5],
+                    'apprenants' => $o[6],
+                    'formateurs' => $o[7],
+                    'promos' => $o[8],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'apprenants:read',
+                    'grp:write',
+                    'promo:read',
+                ],
+                [
+                    'grp:read',
+                    'apprenants:read',
+                    'grp:write',
+                    'promo:read',
+                ],
+                [
+                    'grp:read',
+                    'apprenants:read',
+                    'grp:write',
+                ],
+                [
+                    'grp:read',
+                    'apprenants:read',
+                    'grp:write',
+                ],
+                [
+                    'grp:read',
+                    'apprenants:read',
+                    'grp:write',
+                    'promo:read',
+                ],
+                [
+                    'grp:read',
+                    'apprenants:read',
+                    'grp:write',
+                ],
+                [
+                    'grp:read',
+                    'grp:write',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

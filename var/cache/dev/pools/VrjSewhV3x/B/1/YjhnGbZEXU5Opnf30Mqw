@@ -1,0 +1,82 @@
+<?php //App_Entity_Referentiels
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Referentiels',
+                'id',
+                'libelle',
+                'presentation',
+                'programme',
+                'evaluation',
+                'admission',
+                'groupeCompetences',
+                'promos',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'libelle' => $o[2],
+                    'presentation' => $o[3],
+                    'programme' => $o[4],
+                    'evaluation' => $o[5],
+                    'admission' => $o[6],
+                    'groupeCompetences' => $o[7],
+                    'promos' => $o[8],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'write',
+                    'grpe_and_competences:write',
+                    'ref:read',
+                    'promo:read',
+                ],
+                [
+                    'read',
+                    'grpe_and_competences:write',
+                    'ref:read',
+                    'promo:read',
+                ],
+                [
+                    'read',
+                    'grpe_and_competences:write',
+                    'ref:read',
+                ],
+                [
+                    'read',
+                    'grpe_and_competences:write',
+                ],
+                [
+                    'read',
+                    'grpe_and_competences:write',
+                ],
+                [
+                    'read',
+                    'grpe_and_competences:write',
+                ],
+                [
+                    'write',
+                    'grpe_and_competences:read',
+                    'grpe_and_competences:write',
+                    'ref:read',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

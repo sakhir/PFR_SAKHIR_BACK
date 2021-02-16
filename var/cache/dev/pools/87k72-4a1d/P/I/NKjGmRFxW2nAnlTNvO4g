@@ -1,0 +1,79 @@
+<?php //%255BApp%255CEntity%255CProfilSortie%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'collectionOperations' => [
+                [
+                    'get_profils_sortie' => [
+                        'method' => 'GET',
+                        'path' => '/admin/profilsorties',
+                        'normalization_context' => [
+                            'groups' => [
+                                'profil_sortie:read',
+                            ],
+                        ],
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                    'create_profils_sortie' => [
+                        'method' => 'POST',
+                        'path' => '/admin/profilsorties',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\'))',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                [
+                    'get_apprenants_promo_profils_sortie' => [
+                        'method' => 'GET',
+                        'route_name' => 'apprenants_promo_profils_sortie',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                    'get_one_profils_sortie' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'p_sortie_apprenant',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/profilsorties/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                    'edit_profils_sortie' => [
+                        'method' => 'PUT',
+                        'path' => '/admin/profilsortie/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\'))',
+                    ],
+                    'apprenant_promo_psortie' => [
+                        'method' => 'GET',
+                        'route_name' => 'apprenant_promo_ps',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                ],
+            ],
+            'filterClass' => [
+                1 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\SearchFilter',
+            ],
+            'properties' => [
+                1 => [
+                    'archivage' => 'exact',
+                ],
+            ],
+            'repositoryClass' => [
+                2 => 'App\\Repository\\ProfilSortieRepository',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];

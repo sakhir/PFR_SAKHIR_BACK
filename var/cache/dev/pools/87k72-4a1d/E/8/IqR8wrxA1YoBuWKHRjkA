@@ -1,0 +1,87 @@
+<?php //%255BApp%255CEntity%255CGroupeCompetences%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\GroupeCompetencesRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'create_grpe_competences' => [
+                        'route_name' => 'create_groupe_competence',
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                        'security_message' => 'seul l\'admin a accès a cette resource',
+                    ],
+                    'get_grp_c' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'all_grp_c',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/grpecompetences/competences',
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                        'security_message' => 'seul l\'admin a accès a cette resource',
+                    ],
+                    'liste_grpe_competences' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpecompetence:read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => 'admin/grpecompetences',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                        'security_message' => 'vous n\'avez pas accès',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_one_grpe_competences' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpecompetence:read',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => 'admin/grpecompetences/{id}',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                        'security_message' => 'vous n\'avez pas accès',
+                    ],
+                    'edit_grpe_competences' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'grpecompetence:read',
+                            ],
+                        ],
+                        'route_name' => 'edit_grpe_competences',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                    ],
+                    'competences_get_subresource' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'competence_grp',
+                            ],
+                        ],
+                        'method' => 'GET',
+                        'path' => '/admin/grpecompetences/{id}/competences',
+                        'security' => '(is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\'))',
+                        'security_message' => 'vous n\'avez pas accès',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];
